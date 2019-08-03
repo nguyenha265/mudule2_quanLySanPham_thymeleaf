@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Edit</title>
+</head>
+<body>
+<h1>Edit Receptionist</h1>
+<p>
+    <a href="/upload/list">Back to receptionist list</a>
+</p>
+<form action="#" th:action="@{/upload/update}" th:object="${editReceptionist}" method="POST" enctype="multipart/form-data">
+    <input type="text" th:field="*{id}"/>
+    <div>
+        <label>Name</label>
+        <input type="text" th:field="*{name}"/>
+    </div>
+    <div>
+        <label>Age</label>
+        <input type="text" th:field="*{age}"/>
+    </div>
+    <div>
+        <label>Address</label>
+        <input type="text" th:field="*{address}"/>
+    </div>
+    <div>
+        <label>Hobby</label>
+        <input type="text" th:field="*{hobby}"/>
+    </div>
+    <div>
+        <label>avartar</label>
+        <input type="file" th:field="*{avartar}"/>
+    </div>
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>

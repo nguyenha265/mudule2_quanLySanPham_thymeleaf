@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>list</title>
+</head>
+<body>
+<div th:each="receptionist : ${receptionist}">
+    <p th:text="${receptionist.value.getId()}"></p>
+    <p th:text="${receptionist.value.getName()}"></p>
+    <p th:text="${receptionist.value.getAge()}"></p>
+    <p th:text="${receptionist.value.getAddress()}"></p>
+    <p th:text="${receptionist.value.getHobby()}"></p>
+    <img width="150px" height="200px" th:src="@{'/image/' + ${receptionist.value.getAvartar()}}">
+</div>
+</body>
+</html>

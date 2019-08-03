@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>list</title>
+</head>
+<h2><a th:href="@{/upload/create/}">Create RecePtionist</a></h2>
+<form th:action="@{/upload/search/}" method="get">
+        <input type="text" name="search">
+        <input type="submit" value="Search">
+</form>
+<body>
+<div th:each="receptionist : ${receptionists}">
+    <a th:href="@{/upload/view/__${receptionist.value.getId()}__ }" th:text="${receptionist.value.getName()}"></a>
+    <img width="150px" height="200px" th:src="@{'/image/' + ${receptionist.getValue().getAvartar()}}">
+    <a th:href="@{/upload/edit/__${receptionist.value.getId()}__}">Edit</a>
+    <a th:href="@{/upload/delete/__${receptionist.value.getId()}__}">Delete</a>
+</div>
+</body>
+</html>
