@@ -17,13 +17,11 @@ import java.io.IOException;
 import java.util.Map;
 
 @Controller
-@RequestMapping("/upload")
 @PropertySource("classpath:upload.properties")
 public class ReceptionistController {
 
     @Autowired
     Environment env;
-
     @Autowired
     private ReceptionistService receptionistService;
 
@@ -63,7 +61,7 @@ public class ReceptionistController {
     }
 
     @GetMapping("/view/{id}")
-    public ModelAndView ViewReceptionist(@PathVariable("id") int id) {
+    public ModelAndView ViewReceptionist(@PathVariable int id) {
         Receptionist receptionist = receptionistService.findById(id);
         ModelAndView modelAndView = new ModelAndView("/view");
         modelAndView.addObject("receptionist", receptionist);
